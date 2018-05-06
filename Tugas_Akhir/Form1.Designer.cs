@@ -36,7 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCS14 = new System.Windows.Forms.DataGridView();
             this.nIMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggalLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,9 @@
             this.textNama = new System.Windows.Forms.TextBox();
             this.textTLahir = new System.Windows.Forms.TextBox();
             this.textAD = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCS14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +91,7 @@
             // 
             this.button4.Location = new System.Drawing.Point(762, 248);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 44);
+            this.button4.Size = new System.Drawing.Size(127, 44);
             this.button4.TabIndex = 3;
             this.button4.Text = "EDIT";
             this.button4.UseVisualStyleBackColor = true;
@@ -115,22 +117,23 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // dataGridView1
+            // dgvCS14
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCS14.AutoGenerateColumns = false;
+            this.dgvCS14.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCS14.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nIMDataGridViewTextBoxColumn,
             this.namaDataGridViewTextBoxColumn,
             this.tanggalLahirDataGridViewTextBoxColumn,
             this.jenisKelaminDataGridViewTextBoxColumn,
             this.asalDaerahDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.minatBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(52, 360);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(974, 321);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvCS14.DataSource = this.minatBindingSource;
+            this.dgvCS14.Location = new System.Drawing.Point(52, 360);
+            this.dgvCS14.Name = "dgvCS14";
+            this.dgvCS14.RowTemplate.Height = 24;
+            this.dgvCS14.Size = new System.Drawing.Size(974, 321);
+            this.dgvCS14.TabIndex = 6;
+            this.dgvCS14.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // nIMDataGridViewTextBoxColumn
             // 
@@ -178,6 +181,7 @@
             // 
             // textJK
             // 
+            this.textJK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textJK.Location = new System.Drawing.Point(550, 114);
             this.textJK.Multiline = true;
             this.textJK.Name = "textJK";
@@ -186,6 +190,7 @@
             // 
             // textNim
             // 
+            this.textNim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNim.Location = new System.Drawing.Point(145, 112);
             this.textNim.Multiline = true;
             this.textNim.Name = "textNim";
@@ -195,6 +200,7 @@
             // 
             // textNama
             // 
+            this.textNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNama.Location = new System.Drawing.Point(145, 183);
             this.textNama.Multiline = true;
             this.textNama.Name = "textNama";
@@ -203,6 +209,7 @@
             // 
             // textTLahir
             // 
+            this.textTLahir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTLahir.Location = new System.Drawing.Point(145, 250);
             this.textTLahir.Multiline = true;
             this.textTLahir.Name = "textTLahir";
@@ -212,11 +219,31 @@
             // 
             // textAD
             // 
+            this.textAD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textAD.Location = new System.Drawing.Point(550, 182);
             this.textAD.Multiline = true;
             this.textAD.Name = "textAD";
             this.textAD.Size = new System.Drawing.Size(197, 42);
             this.textAD.TabIndex = 11;
+            // 
+            // textSearch
+            // 
+            this.textSearch.Location = new System.Drawing.Point(909, 113);
+            this.textSearch.Multiline = true;
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(158, 41);
+            this.textSearch.TabIndex = 12;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.TabIndex = 13;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
@@ -225,12 +252,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1081, 719);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textSearch);
             this.Controls.Add(this.textAD);
             this.Controls.Add(this.textTLahir);
             this.Controls.Add(this.textNama);
             this.Controls.Add(this.textNim);
             this.Controls.Add(this.textJK);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCS14);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -240,7 +269,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCS14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatDataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -256,7 +285,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCS14;
         private minatDataSet1 minatDataSet1;
         private System.Windows.Forms.BindingSource minatBindingSource;
         private minatDataSet1TableAdapters.minatTableAdapter minatTableAdapter;
@@ -270,6 +299,8 @@
         private System.Windows.Forms.TextBox textNama;
         private System.Windows.Forms.TextBox textTLahir;
         private System.Windows.Forms.TextBox textAD;
+        private System.Windows.Forms.TextBox textSearch;
+        public System.Windows.Forms.Label label1;
     }
 }
 

@@ -13,6 +13,8 @@ namespace Tugas_Akhir
 {
     public partial class Form1 : Form
     {
+        string id1,id2;
+        //login lg = new login();
         string koneksi = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\\users\\taspen\\documents\\visual studio 2015\\Projects\\Tugas_Akhir\\Tugas_Akhir\\minat.mdb";
         public Form1()
         {
@@ -20,6 +22,7 @@ namespace Tugas_Akhir
         }
         void load()
         {
+            
             // TODO: This line of code loads data into the 'minatDataSet.minat' table. You can move, or remove it, as needed.
             this.minatTableAdapter.Fill(this.minatDataSet1.minat);
             string sql = "SELECT * FROM minat";
@@ -29,10 +32,15 @@ namespace Tugas_Akhir
             DataSet ds = new DataSet();
             da.Fill(ds, "minat");
             con.Close();
-            dataGridView1.DataSource = ds.Tables["minat"].DefaultView;
+            dgvCS14.DataSource = ds.Tables["minat"].DefaultView;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            login lg = new login();
+            
+            lg.setid(id2);
+            label1.Text += "Selamat Datang, ";
+            label1.Text += lg.getid();
             // TODO: This line of code loads data into the 'minatDataSet1.minat' table. You can move, or remove it, as needed.
             this.minatTableAdapter.Fill(this.minatDataSet1.minat);
 
@@ -90,7 +98,12 @@ namespace Tugas_Akhir
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            textNim.Clear();
+            textNama.Clear();
+            textTLahir.Clear();
+            textJK.Clear();
+            textAD.Clear();
+            textSearch.Clear();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -123,7 +136,7 @@ namespace Tugas_Akhir
             OleDbDataReader rdr = null;
             try
             {
-                string sql = string.Format("select*from minat where Nim='" + textNim.Text + "'");
+                string sql = string.Format("select*from minat where Nim='" + textNim.Text + textSearch.Text + "'");
                 OleDbConnection conn = new OleDbConnection(koneksi);
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
@@ -146,15 +159,48 @@ namespace Tugas_Akhir
 
         private void button6_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                string sql = string.Format ("select* from minat");
+                OleDbCommand perintah = new OleDbCommand(sql);
+                DataSet ds = new DataSet();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(perintah);
+                adapter.Fill(ds, "res");
+                dgvCS14.DataSource = ds.Tables["res"];
+                adapter.Dispose();
+                perintah.Dispose();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Gagal menampilkan data");
+            }
         }
 
         private void textNim_TextChanged(object sender, EventArgs e)
         {
-
+            if (System.Text.RegularExpressions.Regex.IsMatch(textNim.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                textNim.Text = textNim.Text.Remove(textNim.Text.Length - 1);
+            }
         }
 
         private void textTLahir_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
