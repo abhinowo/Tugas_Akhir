@@ -8,3 +8,4 @@ c:\users\taspen\documents\visual studio 2015\Projects\Tugas_Akhir\Tugas_Akhir\ob
 c:\users\taspen\documents\visual studio 2015\Projects\Tugas_Akhir\Tugas_Akhir\obj\Debug\Tugas_Akhir.csproj.GenerateResource.Cache
 c:\users\taspen\documents\visual studio 2015\Projects\Tugas_Akhir\Tugas_Akhir\obj\Debug\Tugas_Akhir.exe
 c:\users\taspen\documents\visual studio 2015\Projects\Tugas_Akhir\Tugas_Akhir\obj\Debug\Tugas_Akhir.pdb
+c:\users\taspen\documents\visual studio 2015\Projects\Tugas_Akhir\Tugas_Akhir\obj\Debug\Tugas_Akhir.csprojResolveAssemblyReference.cache

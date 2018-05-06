@@ -45,13 +45,13 @@
             this.minatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.minatDataSet1 = new Tugas_Akhir.minatDataSet1();
             this.minatTableAdapter = new Tugas_Akhir.minatDataSet1TableAdapters.minatTableAdapter();
-            this.textJK = new System.Windows.Forms.TextBox();
             this.textNim = new System.Windows.Forms.TextBox();
             this.textNama = new System.Windows.Forms.TextBox();
             this.textTLahir = new System.Windows.Forms.TextBox();
             this.textAD = new System.Windows.Forms.TextBox();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboJK = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCS14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatDataSet1)).BeginInit();
@@ -131,7 +131,7 @@
             this.dgvCS14.Location = new System.Drawing.Point(52, 360);
             this.dgvCS14.Name = "dgvCS14";
             this.dgvCS14.RowTemplate.Height = 24;
-            this.dgvCS14.Size = new System.Drawing.Size(974, 321);
+            this.dgvCS14.Size = new System.Drawing.Size(972, 319);
             this.dgvCS14.TabIndex = 6;
             this.dgvCS14.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -179,15 +179,6 @@
             // 
             this.minatTableAdapter.ClearBeforeFill = true;
             // 
-            // textJK
-            // 
-            this.textJK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textJK.Location = new System.Drawing.Point(550, 114);
-            this.textJK.Multiline = true;
-            this.textJK.Name = "textJK";
-            this.textJK.Size = new System.Drawing.Size(197, 42);
-            this.textJK.TabIndex = 7;
-            // 
             // textNim
             // 
             this.textNim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,6 +219,7 @@
             // 
             // textSearch
             // 
+            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearch.Location = new System.Drawing.Point(909, 113);
             this.textSearch.Multiline = true;
             this.textSearch.Name = "textSearch";
@@ -245,6 +237,18 @@
             this.label1.TabIndex = 13;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // comboJK
+            // 
+            this.comboJK.FormattingEnabled = true;
+            this.comboJK.Items.AddRange(new object[] {
+            "Laki-Laki",
+            "Perempuan"});
+            this.comboJK.Location = new System.Drawing.Point(550, 123);
+            this.comboJK.Name = "comboJK";
+            this.comboJK.Size = new System.Drawing.Size(195, 24);
+            this.comboJK.TabIndex = 14;
+            this.comboJK.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -252,13 +256,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1081, 719);
+            this.Controls.Add(this.comboJK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textSearch);
             this.Controls.Add(this.textAD);
             this.Controls.Add(this.textTLahir);
             this.Controls.Add(this.textNama);
             this.Controls.Add(this.textNim);
-            this.Controls.Add(this.textJK);
             this.Controls.Add(this.dgvCS14);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -294,13 +298,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalLahirDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn asalDaerahDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textJK;
         private System.Windows.Forms.TextBox textNim;
         private System.Windows.Forms.TextBox textNama;
         private System.Windows.Forms.TextBox textTLahir;
         private System.Windows.Forms.TextBox textAD;
         private System.Windows.Forms.TextBox textSearch;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboJK;
     }
 }
 

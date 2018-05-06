@@ -50,7 +50,7 @@ namespace Tugas_Akhir
         {
             try
             {
-                string sql = string.Format("insert into minat (Nim,Nama,TLahir,JK,AD) VALUES('{0}','{1}','{2}','{3}','{4}')", textNim.Text, textNama.Text, textTLahir.Text, textJK.Text, textAD.Text);
+                string sql = string.Format("insert into minat (Nim,Nama,TLahir,JK,AD) VALUES('{0}','{1}','{2}','{3}','{4}')", textNim.Text, textNama.Text, textTLahir.Text, comboJK.Text, textAD.Text);
                 OleDbConnection conn = new OleDbConnection(koneksi);
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
@@ -62,7 +62,7 @@ namespace Tugas_Akhir
                 textNim.Clear();
                 textNama.Clear();
                 textTLahir.Clear();
-                textJK.Clear();
+                comboJK.Text = "-";
                 textAD.Clear();
             }
             catch (OleDbException salah)
@@ -87,7 +87,7 @@ namespace Tugas_Akhir
                 textNim.Clear();
                 textNama.Clear();
                 textTLahir.Clear();
-                textJK.Clear();
+                comboJK.Text = "-";
                 textAD.Clear();
             }
             catch (OleDbException salah)
@@ -98,10 +98,11 @@ namespace Tugas_Akhir
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             textNim.Clear();
             textNama.Clear();
             textTLahir.Clear();
-            textJK.Clear();
+            comboJK.Text = "-";
             textAD.Clear();
             textSearch.Clear();
         }
@@ -110,7 +111,7 @@ namespace Tugas_Akhir
         {
             try
             {
-                string sql = string.Format("update minat set Nama='" + textNama.Text + textTLahir.Text + textJK.Text + textAD.Text + "' where Nim='" + textNim.Text + "'");
+                string sql = string.Format("update minat set Nama='" + textNama.Text + textTLahir.Text + comboJK.Text + textAD.Text + "' where Nim='" + textNim.Text + "'");
                 OleDbConnection conn = new OleDbConnection(koneksi);
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
@@ -122,7 +123,7 @@ namespace Tugas_Akhir
                 textNim.Clear();
                 textNama.Clear();
                 textTLahir.Clear();
-                textJK.Clear();
+                comboJK.Text = "-";
                 textAD.Clear();
             }
             catch (OleDbException ex)
@@ -196,6 +197,11 @@ namespace Tugas_Akhir
         }
 
         private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
