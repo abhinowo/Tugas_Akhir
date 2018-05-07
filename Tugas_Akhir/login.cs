@@ -29,7 +29,7 @@ namespace Tugas_Akhir
             if (id.Text == "abhin" && pw.Text == "123" || id.Text == "aryo" && pw.Text == "1" || id.Text == "admin" && pw.Text == "admin")
             {
                 MessageBox.Show("Berhasil Masuk.");
-                Form1 main = new Form1();
+                Form1 main = new Form1(); 
                 id1 = id.Text;
                 setid(id1);
                 getid();
@@ -38,7 +38,7 @@ namespace Tugas_Akhir
             }
             else
             {
-                MessageBox.Show("Gagal Masuk.");
+                MessageBox.Show("Username atau Password Anda salah.");
                 id.Text = "";
                 pw.Text = "";
             }

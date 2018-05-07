@@ -50,7 +50,7 @@ namespace Tugas_Akhir
         {
             try
             {
-                string sql = string.Format("insert into minat (Nim,Nama,TLahir,JK,AD) VALUES('{0}','{1}','{2}','{3}','{4}')", textNim.Text, textNama.Text, textTLahir.Text, comboJK.Text, textAD.Text);
+                string sql = string.Format("insert into minat  VALUES('{0}','{1}','{2}','{3}','{4}')", textNim.Text, textNama.Text, textTLahir.Text, comboJK.Text, textAD.Text);
                 OleDbConnection conn = new OleDbConnection(koneksi);
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
@@ -86,7 +86,7 @@ namespace Tugas_Akhir
 
                 textNim.Clear();
                 textNama.Clear();
-                textTLahir.Clear();
+                textTLahir.Clear(); 
                 comboJK.Text = "-";
                 textAD.Clear();
             }
@@ -181,7 +181,7 @@ namespace Tugas_Akhir
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textNim.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Tolong diisi hanya Angka.");
                 textNim.Text = textNim.Text.Remove(textNim.Text.Length - 1);
             }
         }

@@ -37,11 +37,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dgvCS14 = new System.Windows.Forms.DataGridView();
-            this.nIMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asalDaerahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.minatDataSet1 = new Tugas_Akhir.minatDataSet1();
             this.minatTableAdapter = new Tugas_Akhir.minatDataSet1TableAdapters.minatTableAdapter();
@@ -52,6 +47,11 @@
             this.textSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboJK = new System.Windows.Forms.ComboBox();
+            this.nIMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asalDaerahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCS14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minatDataSet1)).BeginInit();
@@ -124,7 +124,7 @@
             this.dgvCS14.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nIMDataGridViewTextBoxColumn,
             this.namaDataGridViewTextBoxColumn,
-            this.tanggalLahirDataGridViewTextBoxColumn,
+            this.TLahirDataGridViewTextBoxColumn,
             this.jenisKelaminDataGridViewTextBoxColumn,
             this.asalDaerahDataGridViewTextBoxColumn});
             this.dgvCS14.DataSource = this.minatBindingSource;
@@ -134,36 +134,6 @@
             this.dgvCS14.Size = new System.Drawing.Size(972, 319);
             this.dgvCS14.TabIndex = 6;
             this.dgvCS14.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // nIMDataGridViewTextBoxColumn
-            // 
-            this.nIMDataGridViewTextBoxColumn.DataPropertyName = "NIM";
-            this.nIMDataGridViewTextBoxColumn.HeaderText = "NIM";
-            this.nIMDataGridViewTextBoxColumn.Name = "nIMDataGridViewTextBoxColumn";
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            // 
-            // tanggalLahirDataGridViewTextBoxColumn
-            // 
-            this.tanggalLahirDataGridViewTextBoxColumn.DataPropertyName = "Tanggal Lahir";
-            this.tanggalLahirDataGridViewTextBoxColumn.HeaderText = "Tanggal Lahir";
-            this.tanggalLahirDataGridViewTextBoxColumn.Name = "tanggalLahirDataGridViewTextBoxColumn";
-            // 
-            // jenisKelaminDataGridViewTextBoxColumn
-            // 
-            this.jenisKelaminDataGridViewTextBoxColumn.DataPropertyName = "Jenis Kelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn.HeaderText = "Jenis Kelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn.Name = "jenisKelaminDataGridViewTextBoxColumn";
-            // 
-            // asalDaerahDataGridViewTextBoxColumn
-            // 
-            this.asalDaerahDataGridViewTextBoxColumn.DataPropertyName = "Asal Daerah";
-            this.asalDaerahDataGridViewTextBoxColumn.HeaderText = "Asal Daerah";
-            this.asalDaerahDataGridViewTextBoxColumn.Name = "asalDaerahDataGridViewTextBoxColumn";
             // 
             // minatBindingSource
             // 
@@ -249,6 +219,36 @@
             this.comboJK.TabIndex = 14;
             this.comboJK.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // nIMDataGridViewTextBoxColumn
+            // 
+            this.nIMDataGridViewTextBoxColumn.DataPropertyName = "NIM";
+            this.nIMDataGridViewTextBoxColumn.HeaderText = "NIM";
+            this.nIMDataGridViewTextBoxColumn.Name = "nIMDataGridViewTextBoxColumn";
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            // 
+            // TLahirDataGridViewTextBoxColumn
+            // 
+            this.TLahirDataGridViewTextBoxColumn.DataPropertyName = "TLahir";
+            this.TLahirDataGridViewTextBoxColumn.HeaderText = "Tanggal Lahir";
+            this.TLahirDataGridViewTextBoxColumn.Name = "TLahirDataGridViewTextBoxColumn";
+            // 
+            // jenisKelaminDataGridViewTextBoxColumn
+            // 
+            this.jenisKelaminDataGridViewTextBoxColumn.DataPropertyName = "Jenis Kelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn.HeaderText = "Jenis Kelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn.Name = "jenisKelaminDataGridViewTextBoxColumn";
+            // 
+            // asalDaerahDataGridViewTextBoxColumn
+            // 
+            this.asalDaerahDataGridViewTextBoxColumn.DataPropertyName = "Asal Daerah";
+            this.asalDaerahDataGridViewTextBoxColumn.HeaderText = "Asal Daerah";
+            this.asalDaerahDataGridViewTextBoxColumn.Name = "asalDaerahDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,11 +293,6 @@
         private minatDataSet1 minatDataSet1;
         private System.Windows.Forms.BindingSource minatBindingSource;
         private minatDataSet1TableAdapters.minatTableAdapter minatTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIMDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tanggalLahirDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asalDaerahDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textNim;
         private System.Windows.Forms.TextBox textNama;
         private System.Windows.Forms.TextBox textTLahir;
@@ -305,6 +300,11 @@
         private System.Windows.Forms.TextBox textSearch;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboJK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nIMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLahirDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asalDaerahDataGridViewTextBoxColumn;
     }
 }
 
